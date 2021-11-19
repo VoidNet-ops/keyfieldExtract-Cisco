@@ -1,0 +1,74 @@
+Test_AAA102#sh run
+Building configuration...
+
+Current configuration : xx bytes
+!
+! Last configuration change at hh:mm:ss UTC ddd mmm DD YYYY
+!
+version 12.3
+!
+hostname Test_AAA102
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+aaa new-model
+!
+ip name-server 000.000.000.000
+ip name-server 000.000.000.000
+ip name-server 000.000.000.000
+!
+!
+!
+aaa authentication login AUTHENTICATION group radius group RADIUS local
+aaa authorization exec AUTHORIZATION group radius group 
+!
+interface Loopback0
+ ip address 000.000.000.000 255.255.255.255
+!
+
+interface GigabitEthernet0/0/0
+ ip address 000.000.000.000 255.255.255.255
+ no shutdown
+!
+interface FastEthernet0/0/1
+ ip address 000.000.000.000 255.255.255.255
+ no shutdown
+!
+interface FastEthernet0/0/2
+ ip address 000.000.000.000 255.255.255.255
+ no shutdown
+!
+interface FastEthernet0/0/3
+ ip address 000.000.000.000 255.255.255.255
+ no shutdown
+!
+interface Vlan1
+ ip address dhcp
+!
+radius-server host 000.000.000.000 key 9 "ABCDEFG" authentication testing
+radius-server host 000.000.000.000 key 9 "ABCDEFG" authentication testing
+radius-server host 000.000.000.000 key 9 "ABCDEFG" authentication testing
+!
+!
+!
+!
+ntp server 000.000.000.000 prefer
+ntp server 000.000.000.000
+end
+
+Test_AAA102#        
+Test_AAA102#
+Test_AAA102#eit
+Translating "eit"
+
+Translating "eit"
+
+% Bad IP address or host name
+% Unknown command or computer name, or unable to find computer address
+Test_AAA102#
+Test_AAA102#
+Test_AAA102#
+Test_AAA102#exit

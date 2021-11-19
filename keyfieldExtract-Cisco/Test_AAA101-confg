@@ -1,0 +1,84 @@
+Test_AAA101#sh run
+Building configuration...
+
+Current configuration : xx bytes
+!
+! Last configuration change at hh:mm:ss UTC ddd mmm DD YYYY
+!
+version 12.3
+!
+hostname Test_AAA101
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+aaa new-model
+!
+ip name-server 000.000.000.000
+ip name-server 000.000.000.000
+ip name-server 000.000.000.000
+!
+!
+!
+aaa authentication login AUTHENTICATION group radius group RADIUS local
+aaa authorization exec AUTHORIZATION group radius group 
+!
+interface Loopback0
+ ip address 000.000.000.000 255.255.255.255
+!
+
+interface GigabitEthernet0/0/0
+ ip address 000.000.000.000 255.255.255.255
+ no shutdown
+!
+interface FastEthernet0/0/1
+ ip address 000.000.000.000 255.255.255.255
+ no shutdown
+!
+interface FastEthernet0/0/2
+ ip address 000.000.000.000 255.255.255.255
+ no shutdown
+!
+interface FastEthernet0/0/3
+ ip address 000.000.000.000 255.255.255.255
+ no shutdown
+!
+interface Vlan1
+ ip address dhcp
+!
+radius-server attribute 0 on-for-login-auth
+radius-server attribute 0 include-in-access-req
+radius-server attribute 00 access-request include
+radius-server dead-criteria time 30 tries 3
+radius-server timeout 3
+!
+radius server TEST_AAA
+ address ipv4 000.000.000.000 auth-port 000 acct-port 000
+ key 9 ABCDEFGHIJKLMNOPQRSTUVWXYZ
+!
+radius server TEST_BBB
+ address ipv4 000.000.000.000 auth-port 000 acct-port 000
+ key 9 ABCDEFGHIJKLMNOPQRSTUVWXYZ
+!
+!
+!
+!
+ntp server 000.000.000.000 prefer
+ntp server 000.000.000.000
+end
+
+Test_AAA101#        
+Test_AAA101#
+Test_AAA101#eit
+Translating "eit"
+
+Translating "eit"
+
+% Bad IP address or host name
+% Unknown command or computer name, or unable to find computer address
+Test_AAA101#
+Test_AAA101#
+Test_AAA101#
+Test_AAA101#exit
