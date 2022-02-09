@@ -20,7 +20,7 @@
 .NOTES
   Version:        2.01
   Author:         Dennis Ozmert
-  GitHub:         https://github.com/VoidNet-ops
+  GitHub:         https://github.com/dozmert
   Creation Date:  27/09/2021 @ 9:00am
   Last Updated:   19/11/2021
   Purpose/Change: Device config backup/discovery
